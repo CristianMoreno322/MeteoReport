@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="basedatos.movil.meteoreport.ui.HomeFragment"
+        android:label="Inicio">
+        <action
+            android:id="@+id/toReportList"
+            app:destination="@id/reportListFragment" />
+        <action
+            android:id="@+id/toSettings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportListFragment"
+        android:name="basedatos.movil.meteoreport.ui.ReportListFragment"
+        android:label="Reportes">
+        <action
+            android:id="@+id/toNewReport"
+            app:destination="@id/newReportFragment" />
+        <action
+            android:id="@+id/toDetail"
+            app:destination="@id/reportDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newReportFragment"
+        android:name="basedatos.movil.meteoreport.ui.NewReportFragment"
+        android:label="Nuevo Reporte" />
+
+    <fragment
+        android:id="@+id/reportDetailFragment"
+        android:name="basedatos.movil.meteoreport.ui.ReportDetailFragment"
+        android:label="Detalle" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="basedatos.movil.meteoreport.ui.SettingsFragment"
+        android:label="Ajustes" />
+
+</navigation>
