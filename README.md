@@ -64,3 +64,32 @@ La app implementa el patrón **MVVM** (Model-View-ViewModel) con los siguientes 
   "isSynced": false
 }
 ```
+## Entregable 2: Persistencia y lógica offline
+
+### Cambios realizados
+
+#### CRUD completo
+- Agregado `updateReport()` y `deleteReport()` en WeatherDao, WeatherRepository y WeatherViewModel
+- Formulario de creación con validaciones (ciudad, país, temperatura, humedad, descripción)
+- Pantalla de detalle con edición y eliminación de reportes
+
+#### Formularios
+- `NewReportFragment` — campos: ciudad, país, temperatura, humedad, viento, presión, descripción
+- `ReportDetailFragment` — edición de todos los campos + botón eliminar
+
+#### Lista de reportes
+- RecyclerView con `ReportAdapter` usando `ListAdapter` y `DiffUtil`
+- Estado vacío cuando no hay reportes
+- Click en item navega al detalle
+
+#### UI mejorada
+- Home rediseñado con header azul claro, tarjetas de estadísticas
+- Contador de reportes totales, pendientes y sincronizados en tiempo real
+- Fondo con tarjetas redondeadas (`card_background.xml`)
+
+#### Navegación
+- Argumento `reportId` agregado al nav_graph para pasar ID al detalle
+- Acción `toNewReportFromHome` desde Home directo al formulario
+
+### Funciona sin internet
+Todos los datos se guardan en Room (SQLite local) sin necesidad de conexión.
