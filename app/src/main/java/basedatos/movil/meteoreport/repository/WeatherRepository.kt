@@ -8,9 +8,11 @@ class WeatherRepository(private val dao: WeatherDao) {
 
     fun getAllReports() = dao.getAllReports()
 
-    suspend fun insertReport(report: WeatherReport) {
-        dao.insertReport(report)
-    }
+    suspend fun insertReport(report: WeatherReport) = dao.insertReport(report)
+
+    suspend fun updateReport(report: WeatherReport) = dao.updateReport(report)
+
+    suspend fun deleteReport(report: WeatherReport) = dao.deleteReport(report)
 
     suspend fun fetchAndSaveWeather(city: String) {
         try {

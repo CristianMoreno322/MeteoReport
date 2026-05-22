@@ -9,11 +9,20 @@ interface WeatherDao {
     @Query("SELECT * FROM weather_reports ORDER BY timestamp DESC")
     fun getAllReports(): LiveData<List<WeatherReport>>
 
+    @Query("SELECT * FROM weather_reports WHERE id = :id")
+    suspend fun getReportById(id: Int): WeatherReport?
+
     @Query("SELECT * FROM weather_reports WHERE city = :city LIMIT 1")
     suspend fun getReportByCity(city: String): WeatherReport?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertReport(report: WeatherReport)
+
+    @Update
+    suspend fun updateReport(report: WeatherReport)
+
+    @Delete
+    suspend fun deleteReport(report: WeatherReport)
 
     @Query("SELECT * FROM weather_reports WHERE isSynced = 0")
     suspend fun getPendingSync(): List<WeatherReport>

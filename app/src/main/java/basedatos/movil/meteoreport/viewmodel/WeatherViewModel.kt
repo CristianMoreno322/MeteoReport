@@ -19,14 +19,18 @@ class WeatherViewModel(application: Application) : AndroidViewModel(application)
     private fun dao() = AppDatabase.getInstance(getApplication()).weatherDao()
 
     fun insertReport(report: WeatherReport) {
-        viewModelScope.launch {
-            repository.insertReport(report)
-        }
+        viewModelScope.launch { repository.insertReport(report) }
+    }
+
+    fun updateReport(report: WeatherReport) {
+        viewModelScope.launch { repository.updateReport(report) }
+    }
+
+    fun deleteReport(report: WeatherReport) {
+        viewModelScope.launch { repository.deleteReport(report) }
     }
 
     fun fetchWeather(city: String) {
-        viewModelScope.launch {
-            repository.fetchAndSaveWeather(city)
-        }
+        viewModelScope.launch { repository.fetchAndSaveWeather(city) }
     }
 }

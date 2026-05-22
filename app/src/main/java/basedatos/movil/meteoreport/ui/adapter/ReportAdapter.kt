@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import basedatos.movil.meteoreport.R
 import basedatos.movil.meteoreport.model.WeatherReport
 
-class ReportAdapter : ListAdapter<WeatherReport, ReportAdapter.ViewHolder>(DiffCallback()) {
+class ReportAdapter(
+    private val onClick: (WeatherReport) -> Unit
+) : ListAdapter<WeatherReport, ReportAdapter.ViewHolder>(DiffCallback()) {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvCiudad: TextView = view.findViewById(R.id.tvCiudad)
@@ -24,6 +26,7 @@ class ReportAdapter : ListAdapter<WeatherReport, ReportAdapter.ViewHolder>(DiffC
         val reporte = getItem(position)
         holder.tvCiudad.text = reporte.city
         holder.tvDescripcion.text = reporte.description
+        holder.itemView.setOnClickListener { onClick(reporte) }
     }
 
     class DiffCallback : DiffUtil.ItemCallback<WeatherReport>() {

@@ -14,6 +14,9 @@
         <action
             android:id="@+id/toSettings"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/toNewReportFromHome"
+            app:destination="@id/newReportFragment" />
     </fragment>
 
     <fragment
@@ -36,7 +39,12 @@
     <fragment
         android:id="@+id/reportDetailFragment"
         android:name="basedatos.movil.meteoreport.ui.ReportDetailFragment"
-        android:label="Detalle" />
+        android:label="Detalle">
+        <argument
+            android:name="reportId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"

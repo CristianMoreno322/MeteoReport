@@ -20,6 +20,17 @@
         android:text="+ Nuevo Reporte"
         android:layout_marginBottom="16dp"/>
 
+    <TextView
+        android:id="@+id/tvVacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No hay reportes aún. ¡Crea el primero!"
+        android:textSize="16sp"
+        android:textColor="#888888"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerReportes"
         android:layout_width="match_parent"
