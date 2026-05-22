@@ -77,10 +77,6 @@ La app implementa el patrón **MVVM** (Model-View-ViewModel) con los siguientes 
 - `NewReportFragment` — campos: ciudad, país, temperatura, humedad, viento, presión, descripción
 - `ReportDetailFragment` — edición de todos los campos + botón eliminar
 
-#### Lista de reportes
-- RecyclerView con `ReportAdapter` usando `ListAdapter` y `DiffUtil`
-- Estado vacío cuando no hay reportes
-- Click en item navega al detalle
 
 #### UI mejorada
 - Home rediseñado con header azul claro, tarjetas de estadísticas
