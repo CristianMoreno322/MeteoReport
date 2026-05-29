@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,20 +32,22 @@
                 android:text="Registro de fenómenos meteorológicos locales"
                 android:textSize="13sp"
                 android:textColor="#E8F4FF"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="16dp"/>
 
+            <!-- Fila 1 botones -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
                 <Button
                     android:id="@+id/btnNuevoReporte"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:text="+ Nuevo Reporte"
-                    android:textSize="12sp"
+                    android:text="+ Nuevo"
+                    android:textSize="11sp"
                     android:backgroundTint="#FFFFFF"
                     android:textColor="#5B9BD5"
                     android:layout_marginEnd="8dp"/>
@@ -55,7 +58,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:text="Ver Reportes"
-                    android:textSize="12sp"
+                    android:textSize="11sp"
                     android:backgroundTint="#3A7FC1"
                     android:textColor="#FFFFFF"
                     android:layout_marginEnd="8dp"/>
@@ -66,18 +69,91 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:text="Ajustes"
-                    android:textSize="12sp"
+                    android:textSize="11sp"
                     android:backgroundTint="#3A7FC1"
                     android:textColor="#FFFFFF"/>
 
             </LinearLayout>
+
+            <!-- Fila 2 botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/btnBuscarClima"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="🔍 Buscar Clima"
+                    android:textSize="11sp"
+                    android:backgroundTint="#3A7FC1"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btnSincronizar"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="🔄 Sincronizar"
+                    android:textSize="11sp"
+                    android:backgroundTint="#3A7FC1"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
+            <!-- Fila 3 botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSync"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="🔄 Sync"
+                    android:textSize="11sp"
+                    android:backgroundTint="#3A7FC1"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/btnAbout"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:text="ℹ️ Acerca de"
+                    android:textSize="11sp"
+                    android:backgroundTint="#3A7FC1"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
+        <!-- Contenido -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvConectividad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:text="Verificando conexión..."
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -106,10 +182,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Reportes totales"
+                        android:text="Totales"
                         android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"/>
+                        android:textColor="#666666"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -133,10 +208,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sin sincronizar"
+                        android:text="Pendientes"
                         android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"/>
+                        android:textColor="#666666"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -161,8 +235,7 @@
                         android:layout_height="wrap_content"
                         android:text="Sincronizados"
                         android:textSize="11sp"
-                        android:textColor="#666666"
-                        android:gravity="center"/>
+                        android:textColor="#666666"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -171,7 +244,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/card_background"
                 android:orientation="horizontal"
-                android:padding="16dp"
                 android:layout_marginBottom="12dp">
 
                 <LinearLayout
@@ -179,7 +251,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical"
-                    android:layout_marginEnd="12dp">
+                    android:layout_marginEnd="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -192,7 +264,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Los reportes se guardan localmente y se sincronizan cuando haya conexión."
+                        android:text="Los reportes se guardan localmente."
                         android:textSize="12sp"
                         android:textColor="#666666"/>
                 </LinearLayout>
@@ -214,7 +286,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Crear reporte, revisar lista y configurar ajustes."
+                        android:text="Crear reporte, revisar lista y ajustes."
                         android:textSize="12sp"
                         android:textColor="#666666"/>
                 </LinearLayout>

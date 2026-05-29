@@ -8,27 +8,20 @@
         android:id="@+id/homeFragment"
         android:name="basedatos.movil.meteoreport.ui.HomeFragment"
         android:label="Inicio">
-        <action
-            android:id="@+id/toReportList"
-            app:destination="@id/reportListFragment" />
-        <action
-            android:id="@+id/toSettings"
-            app:destination="@id/settingsFragment" />
-        <action
-            android:id="@+id/toNewReportFromHome"
-            app:destination="@id/newReportFragment" />
+        <action android:id="@+id/toReportList" app:destination="@id/reportListFragment" />
+        <action android:id="@+id/toSettings" app:destination="@id/settingsFragment" />
+        <action android:id="@+id/toNewReportFromHome" app:destination="@id/newReportFragment" />
+        <action android:id="@+id/toWeatherSearch" app:destination="@id/weatherSearchFragment" />
+        <action android:id="@+id/toSync" app:destination="@id/syncFragment" />
+        <action android:id="@+id/toAbout" app:destination="@id/aboutFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/reportListFragment"
         android:name="basedatos.movil.meteoreport.ui.ReportListFragment"
         android:label="Reportes">
-        <action
-            android:id="@+id/toNewReport"
-            app:destination="@id/newReportFragment" />
-        <action
-            android:id="@+id/toDetail"
-            app:destination="@id/reportDetailFragment" />
+        <action android:id="@+id/toNewReport" app:destination="@id/newReportFragment" />
+        <action android:id="@+id/toDetail" app:destination="@id/reportDetailFragment" />
     </fragment>
 
     <fragment
@@ -50,5 +43,20 @@
         android:id="@+id/settingsFragment"
         android:name="basedatos.movil.meteoreport.ui.SettingsFragment"
         android:label="Ajustes" />
+
+    <fragment
+        android:id="@+id/weatherSearchFragment"
+        android:name="basedatos.movil.meteoreport.ui.WeatherSearchFragment"
+        android:label="Buscar Clima" />
+
+    <fragment
+        android:id="@+id/syncFragment"
+        android:name="basedatos.movil.meteoreport.ui.SyncFragment"
+        android:label="Sincronización" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="basedatos.movil.meteoreport.ui.AboutFragment"
+        android:label="Acerca de" />
 
 </navigation>
