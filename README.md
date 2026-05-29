@@ -89,3 +89,40 @@ La app implementa el patrón **MVVM** (Model-View-ViewModel) con los siguientes 
 
 ### Funciona sin internet
 Todos los datos se guardan en Room (SQLite local) sin necesidad de conexión.
+
+## Entregable 3: Integración, receivers y cierre profesional
+
+### Nuevas funcionalidades
+
+#### BroadcastReceivers
+- `NetworkReceiver` — detecta cambios de conectividad en tiempo real
+- `SyncReceiver` — sincroniza reportes pendientes al reconectar
+
+#### Consumo real de API
+- Integración con OpenWeatherMap API
+- `WeatherSearchFragment` — búsqueda de clima en tiempo real por ciudad
+- `SyncFragment` — sincronización de reportes pendientes con datos reales
+
+#### Indicadores de conectividad
+- Home muestra 🟢 Conectado / 🔴 Sin conexión en tiempo real
+- SyncFragment muestra estado de conexión y reportes pendientes
+
+#### 8 vistas conectadas
+| Vista | Descripción |
+|---|---|
+| HomeFragment | Dashboard con estadísticas y conectividad |
+| ReportListFragment | Lista de reportes con RecyclerView |
+| NewReportFragment | Formulario con validaciones |
+| ReportDetailFragment | Detalle con edición y eliminación |
+| SettingsFragment | Configuración de la app |
+| WeatherSearchFragment | Búsqueda de clima en tiempo real |
+| SyncFragment | Sincronización con indicadores |
+| AboutFragment | Información del proyecto |
+
+### Sustentación técnica
+- **MVVM** separa la lógica de negocio de la UI manteniendo el código limpio y testeable
+- **Room** garantiza persistencia offline sin necesidad de internet
+- **Retrofit** consume la API REST de OpenWeatherMap de forma asíncrona
+- **BroadcastReceiver** detecta conectividad y dispara sincronización automática
+- **LiveData** actualiza la UI reactivamente sin polling manual
+- **Navigation Component** gestiona el flujo entre las 8 pantallas de forma segura
